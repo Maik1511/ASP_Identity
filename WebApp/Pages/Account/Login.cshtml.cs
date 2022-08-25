@@ -20,11 +20,11 @@ public class LoginModel : PageModel
 public class Credential
 {
     [Required]
-    [Display(Name = "Benutzername: ")]
+    [Display(Name = "User Name ")]
     public string UserName { get; set; }
 
     [Required]
     [DataType(DataType.Password)]
-    [Display(Name = "Passwort: ")]
+    [Display(Name = "Password ")]
     public string Password { get; set; }
 }
