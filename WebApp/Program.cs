@@ -8,6 +8,11 @@ namespace WebApp
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+            builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+            {
+                options.Cookie.Name = "MyCookie";
+                options.LoginPath = "/Account/Login";
+            });
 
             var app = builder.Build();
 
@@ -25,6 +30,7 @@ namespace WebApp
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.MapRazorPages();
 
